@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://plforv85y0y5"]
+
+[ext_resource type="Script" uid="uid://ngw120n4mgfg" path="res://scenes/components/stat_bar.gd" id="1_tlg8w"]
+
+[node name="StatBar" type="Control"]
+custom_minimum_size = Vector2(360, 78)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tlg8w")
+
+[node name="Bg" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="Bg"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="NameLabel" type="Label" parent="Bg/HBox"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bars" type="VBoxContainer" parent="Bg/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="MoraleRow" type="Control" parent="Bg/HBox/Bars"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="MoraleBar" type="ProgressBar" parent="Bg/HBox/Bars/MoraleRow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="MoraleLabel" type="Label" parent="Bg/HBox/Bars/MoraleRow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "MORALE  50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RelRow" type="Control" parent="Bg/HBox/Bars"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="RelBar" type="ProgressBar" parent="Bg/HBox/Bars/RelRow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="RelLabel" type="Label" parent="Bg/HBox/Bars/RelRow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "RELATIONSHIP  50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+position = Vector2(180, 39)

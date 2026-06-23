@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://bksqjg1v4c46p"]
+
+[ext_resource type="Script" uid="uid://cwhagoxr5bpjw" path="res://scenes/main/main.gd" id="1_u1xfj"]
+[ext_resource type="PackedScene" uid="uid://bnjkrg6fuwsl6" path="res://scenes/components/TopBar.tscn" id="2_nha0i"]
+[ext_resource type="PackedScene" uid="uid://clntqcuvrmcvp" path="res://scenes/components/ShelfMenu.tscn" id="3_q24mn"]
+[ext_resource type="PackedScene" uid="uid://dpw8y1a6m2v" path="res://scenes/components/pause_menu.tscn" id="4_gyg6b"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u1xfj")
+
+[node name="GameLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Background" type="ColorRect" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.03, 0.16, 1)
+
+[node name="BgTextureA" type="TextureRect" parent="GameLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BgTextureB" type="TextureRect" parent="GameLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="OverlayLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="OverlayRoot" type="Control" parent="OverlayLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FlashRect" type="ColorRect" parent="OverlayLayer/OverlayRoot"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ToastContainer" type="VBoxContainer" parent="OverlayLayer/OverlayRoot"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_top = 120.0
+offset_right = -24.0
+offset_bottom = 600.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="FloatingTextRoot" type="Control" parent="OverlayLayer/OverlayRoot"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_gyg6b")]

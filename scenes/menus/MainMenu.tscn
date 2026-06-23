@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://dafscwoxpj4ww"]
+
+[ext_resource type="Script" uid="uid://c6sl6m7w4rnr2" path="res://scenes/menus/main_menu.gd" id="1_mm001"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mm001")
+
+[node name="BgFill" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.02, 0.12, 1)
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ButtonsCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -380.0
+offset_right = 240.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="ButtonsCenter"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="BtnNewGame" type="Button" parent="ButtonsCenter/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="BtnContinue" type="Button" parent="ButtonsCenter/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "CONTINUE"
+
+[node name="BtnSettings" type="Button" parent="ButtonsCenter/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="BtnQuit" type="Button" parent="ButtonsCenter/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "QUIT"
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -40.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v0.1.0  •  alpha"
+horizontal_alignment = 2
