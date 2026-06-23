@@ -23,8 +23,14 @@ Audio="*res://scripts/autoload/audio_manager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"Alex": "res://dialogic/characters/Alex.dch",
+"Player": "res://dialogic/characters/Player.dch",
+"Sam": "res://dialogic/characters/Sam.dch"
+}
+directories/dtl_directory={
+"test_intro": "res://dialogic/timelines/test_intro.dtl"
+}
 layout/style_directory={}
 variables={
 "PlayerName": ""

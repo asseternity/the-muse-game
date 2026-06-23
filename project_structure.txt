@@ -1,0 +1,100 @@
+the-muse/
+├── assets
+│   ├── sfx
+│   │   ├── emotions
+│   │   ├── SFX_UI_Cancel.wav
+│   │   ├── SFX_UI_Cancel.wav.import
+│   │   ├── SFX_UI_CloseMenu.wav
+│   │   ├── SFX_UI_CloseMenu.wav.import
+│   │   ├── SFX_UI_Confirm.wav
+│   │   ├── SFX_UI_Confirm.wav.import
+│   │   ├── SFX_UI_Equip.wav
+│   │   ├── SFX_UI_Equip.wav.import
+│   │   ├── SFX_UI_Exit.wav
+│   │   ├── SFX_UI_Exit.wav.import
+│   │   ├── SFX_UI_MenuSelections.wav
+│   │   ├── SFX_UI_MenuSelections.wav.import
+│   │   ├── SFX_UI_OpenMenu.wav
+│   │   ├── SFX_UI_OpenMenu.wav.import
+│   │   ├── SFX_UI_Pause.wav
+│   │   ├── SFX_UI_Pause.wav.import
+│   │   ├── SFX_UI_Resume.wav
+│   │   ├── SFX_UI_Resume.wav.import
+│   │   ├── SFX_UI_Saved.wav
+│   │   ├── SFX_UI_Saved.wav.import
+│   │   ├── SFX_UI_Shop.wav
+│   │   ├── SFX_UI_Shop.wav.import
+│   │   ├── SFX_UI_Unequip.wav
+│   │   └── SFX_UI_Unequip.wav.import
+│   └── shaders
+│       ├── speedlines.gdshader
+│       └── speedlines.gdshader.uid
+├── dialogic
+│   ├── 5Portraits
+│   │   ├── custom_5_portraits.tscn
+│   │   ├── vn_portrait_layer.gd
+│   │   └── vn_portrait_layer.gd.uid
+│   ├── CenteredChoices
+│   │   ├── custom_centered_choices.tscn
+│   │   ├── vn_choice_layer.gd
+│   │   └── vn_choice_layer.gd.uid
+│   ├── characters
+│   │   ├── Alex.dch
+│   │   ├── Alex.dch.uid
+│   │   ├── Player.dch
+│   │   ├── Player.dch.uid
+│   │   ├── Sam.dch
+│   │   └── Sam.dch.uid
+│   ├── SimpleTextInputBox
+│   │   ├── custom_simple_text_input_box.tscn
+│   │   ├── text_input_layer.gd
+│   │   └── text_input_layer.gd.uid
+│   ├── timelines
+│   │   ├── test_intro.dtl
+│   │   └── test_intro.dtl.uid
+│   ├── VisualNovelTextbox
+│   │   ├── animations.gd
+│   │   ├── animations.gd.uid
+│   │   ├── autoadvance_indicator.gd
+│   │   ├── autoadvance_indicator.gd.uid
+│   │   ├── custom_visual_novel_textbox.tscn
+│   │   ├── next.svg
+│   │   ├── next.svg.import
+│   │   ├── vn_textbox_default_panel.tres
+│   │   ├── vn_textbox_layer.gd
+│   │   ├── vn_textbox_layer.gd.uid
+│   │   └── vn_textbox_name_label_panel.tres
+│   └── VisualNovelStyle.tres
+├── scenes
+│   ├── components
+│   │   ├── pause_menu.gd
+│   │   ├── pause_menu.gd.uid
+│   │   ├── pause_menu.tscn
+│   │   ├── stat_bar.gd
+│   │   ├── stat_bar.gd.uid
+│   │   └── StatBar.tscn
+│   ├── main
+│   │   ├── main.gd
+│   │   ├── main.gd.uid
+│   │   └── Main.tscn
+│   └── menus
+│       ├── main_menu.gd
+│       ├── main_menu.gd.uid
+│       └── MainMenu.tscn
+├── scripts
+│   └── autoload
+│       ├── audio_manager.gd
+│       ├── audio_manager.gd.uid
+│       ├── game_state.gd
+│       ├── game_state.gd.uid
+│       ├── ui_theme.gd
+│       └── ui_theme.gd.uid
+├── theme
+│   └── main_theme.tres
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── compile_godot.py
+├── default_bus_layout.tres
+├── project.godot
+└── to_do.txt

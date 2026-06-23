@@ -1,0 +1,12 @@
+[_] make it play-testable with a test timeline and test characters
+[_] update loading screen between main_menu and the game to be more ... deliberate
+[_] init variables - store relationship levels
+[_] init story decisions - and checking for them
+[_] init cards window - UI
+[_] generate cards arts with some swivels and a border (preset from the mood of the card) and the character art
+[_] init adding character cards at certain moments - with a game-juicy animation of getting them
+[_] window of choosing who to talk to
+[_] tracking days
+[_] different clients on different numbered days
+[_] deckbuilder
+[_] change master theme to something more fitting

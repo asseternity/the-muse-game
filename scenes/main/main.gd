@@ -45,7 +45,7 @@ func _ready() -> void:
 		Dialogic.Portraits.character_portrait_changed.connect(_on_portrait_changed)
 
 	# Start the intro timeline
-	Dialogic.start("res://dialogic/timelines/intro.dtl")
+	Dialogic.start("res://dialogic/timelines/test_intro.dtl")
 
 	# Welcome toast
 	await get_tree().create_timer(0.6).timeout

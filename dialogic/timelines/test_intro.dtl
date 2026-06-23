@@ -1,0 +1,18 @@
+[text_input text="What should we call you?" var="PlayerName" placeholder="Player"]
+
+Alex: Hey there, {PlayerName}! Good to finally meet you.
+Sam: Wait, did you just say... {PlayerName}? No way.
+
+Alex: So, {PlayerName}, ready to see how this thing works?
+
+- Yes, let's go!
+    Sam: Hah, knew you'd say that.
+    jump end_test
+- I have questions first.
+    Alex: Fair enough — ask away.
+    Sam: Or don't. We'll wait.
+    jump end_test
+
+label end_test
+Alex: Alright, that's the test loop. Everything's wired up correctly.
+Sam: {PlayerName} survives contact with the engine. Nice.
