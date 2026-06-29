@@ -4,6 +4,7 @@ extends Control
 # ── UPDATE THIS PATH to wherever your logo image lives.
 const LOGO_PATH := "res://assets/"
 const GAME_SCENE_PATH := "res://scenes/main/main.tscn"
+const LOADING_SCREEN_PATH := "res://scenes/menus/LoadingScreen.tscn"
 
 @onready var logo:		  TextureRect = $Logo
 @onready var btn_new:     Button = $ButtonsCenter/VBox/BtnNewGame
@@ -13,15 +14,6 @@ const GAME_SCENE_PATH := "res://scenes/main/main.tscn"
 @onready var version_lbl: Label  = $VersionLabel
 
 func _ready() -> void:
-	# Hide the global synthwave background while we're on the main menu.
-	var bg := get_tree().root.get_node_or_null("SynthwaveBackground")
-	if bg:
-		bg.visible = false
-	# Re-enable it when we leave (handled in _transition_to_game)
-
-	# Make sure the synthwave shader background from UITheme is visible.
-	# UITheme spawns it onto root automatically, but we ensure our menu
-	# doesn't block it with an opaque background.
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
 	# Load logo if available
@@ -131,12 +123,12 @@ func _save_exists() -> bool:
 	return FileAccess.file_exists("user://save_slot_0.tres")
 
 func _transition_to_game() -> void:
-	# Re-enable the synthwave background for the main game
-	var bg := get_tree().root.get_node_or_null("SynthwaveBackground")
-	if bg:
-		bg.visible = true
 	var t := create_tween()
 	t.tween_property(self, "modulate:a", 0.0, 0.5)\
 		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	await t.finished
-	get_tree().change_scene_to_file(GAME_SCENE_PATH)
+	get_tree().change_scene_to_file(LOADING_SCREEN_PATH)
+	# The loading screen shows the synthwave background itself and
+	# hands off to GAME_SCENE_PATH once its minimum duration elapses.
+	# See loading_screen.gd's `next_scene_path` default, which matches
+	# GAME_SCENE_PATH above — update both together if you rename Main.tscn.

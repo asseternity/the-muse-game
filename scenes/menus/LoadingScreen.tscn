@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://rf20cogcjs6s"]
+
+[ext_resource type="Script" uid="uid://d1i7u5gddy1y0" path="res://scenes/menus/loading_screen.gd" id="1_ls001"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ls001")
+
+[node name="BgFill" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0706, 0.0314, 0.1608, 1)
+
+[node name="BgImage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterColumn" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -220.0
+offset_right = 320.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="TitleLabel" type="Label" parent="CenterColumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "LOADING"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterColumn"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+show_percentage = false
+
+[node name="StatusLabel" type="Label" parent="CenterColumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Loading  0%"
+horizontal_alignment = 1
+
+[node name="TipLabel" type="Label" parent="CenterColumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Tip: Loading..."
+horizontal_alignment = 1
+autowrap_mode = 2

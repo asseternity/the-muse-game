@@ -20,6 +20,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UITheme="*res://scripts/autoload/ui_theme.gd"
 GameState="*res://scripts/autoload/game_state.gd"
 Audio="*res://scripts/autoload/audio_manager.gd"
+VariableInspector="*res://scripts/ui/variable_inspector.gd"
 
 [dialogic]
 

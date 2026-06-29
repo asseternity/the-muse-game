@@ -1,12 +1,19 @@
-[_] make it play-testable with a test timeline and test characters
-[_] update loading screen between main_menu and the game to be more ... deliberate
+[v] make it play-testable with a test timeline and test characters
+[v] update loading screen between main_menu and the game to be more ... deliberate
 [_] init variables - store relationship levels
 [_] init story decisions - and checking for them
-[_] init cards window - UI
-[_] generate cards arts with some swivels and a border (preset from the mood of the card) and the character art
-[_] init adding character cards at certain moments - with a game-juicy animation of getting them
+[_] fix W 0:00:01:306   GDScript::reload: The parameter "character_id" is never used in the function "spawn_floating_stat()". If this is intended, prefix it with an underscore: "_character_id".
+  <GDScript Error>UNUSED_PARAMETER
+  <GDScript Source>ui_theme.gd:862 @ GDScript::reload()
+
 [_] window of choosing who to talk to
 [_] tracking days
 [_] different clients on different numbered days
+
+[_] generate cards arts with some swivels and a border (preset from the mood of the card) and the character art
+[_] init adding character cards at certain moments - with a game-juicy animation of getting them
+
+[_] switch between modes back and forth: taro reading, deckbuilder game (for now a placeholder that just shows your cards)
+
 [_] deckbuilder
 [_] change master theme to something more fitting

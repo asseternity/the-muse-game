@@ -44,7 +44,6 @@ var global_theme: Theme
 
 func _ready() -> void:
 	_build_and_apply_global_theme()
-	_spawn_background()
 	_download_and_apply_fonts()
 	get_tree().node_added.connect(_on_node_added)
 	call_deferred("_sweep_existing", get_tree().root)
@@ -865,12 +864,9 @@ func spawn_floating_stat(character_id: String, stat: String, delta: int) -> void
 	if _floating_root == null or delta == 0:
 		return
 
-	# Find the stat bar for this character (in the "stat_bar" group ideally,
-	# fall back to scanning by class name).
-	var origin := _find_stat_bar_world_pos(character_id)
-	if origin == Vector2.ZERO:
-		# Default to top-center if we can't find one
-		origin = Vector2(_floating_root.size.x / 2.0, 100)
+	# No on-screen stat dashboard right now, so floating numbers always
+	# rise from top-center.
+	var origin: Vector2 = Vector2(_floating_root.size.x / 2.0, 100)
 
 	var label := Label.new()
 	var prefix := "+" if delta > 0 else ""
@@ -910,28 +906,6 @@ func spawn_floating_stat(character_id: String, stat: String, delta: int) -> void
 	await t.finished
 	if is_instance_valid(label):
 		label.queue_free()
-
-func _find_stat_bar_world_pos(character_id: String) -> Vector2:
-	for n in get_tree().get_nodes_in_group("stat_bar"):
-		if n is Control and n.get("character_id") == character_id:
-			var ctrl := n as Control
-			return ctrl.global_position + ctrl.size / 2.0 + Vector2(0, ctrl.size.y / 2.0)
-	# Fall back to scanning by script class
-	for n in get_tree().root.get_children():
-		var found := _scan_for_statbar(n, character_id)
-		if found != Vector2.ZERO:
-			return found
-	return Vector2.ZERO
-
-func _scan_for_statbar(node: Node, character_id: String) -> Vector2:
-	if node is Control and node.get("character_id") == character_id:
-		var c := node as Control
-		return c.global_position + Vector2(c.size.x / 2.0, c.size.y)
-	for child in node.get_children():
-		var r := _scan_for_statbar(child, character_id)
-		if r != Vector2.ZERO:
-			return r
-	return Vector2.ZERO
 
 func _apply_juicy_dialog_panel(panel: Control) -> void:
 	if not is_instance_valid(panel):
